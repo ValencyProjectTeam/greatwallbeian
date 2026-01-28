@@ -16,8 +16,8 @@
   "contributes": {
     "commands": [
       {
-        "command": "greatwallbeian.helloWorld",
-        "title": "Hello World"
+        "command": "greatwallbeian.checkNow",
+        "title": "GreatWall Beian: 立即执行合规扫描"
       }
     ]
   },

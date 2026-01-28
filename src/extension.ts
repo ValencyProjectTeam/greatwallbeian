@@ -64,7 +64,7 @@ export function activate(context: vscode.ExtensionContext) {
 
 				const diagnostic = new vscode.Diagnostic(
 					range,
-					`🛑 [GreatWall Beian] 类型 "${typeName}" 未备案！编译/运行已拦截，请先完成备案。\n 不能使用未备案的元素 '${typeName}'！`,
+					`元素 "${typeName}" 未备案！编译/运行已拦截，请先完成备案。\n 不能使用未备案的元素 '${typeName}'！`,
 					vscode.DiagnosticSeverity.Error // 强制红色波浪线
 				);
 				diagnostic.code = 'MUST_FILED';
