@@ -1,3 +1,12 @@
+/** 
+ * GreatWall Beian - 代码备案合规检查工具
+ * MIT 许可证
+ * 
+ * 版权所有 (c) 2026 Valency 和 Higashitani Yume
+ * 
+ * 你可以在遵守 MIT 许可证的前提下修改或者分发、复制此代码。
+*/
+
 import * as vscode from 'vscode';
 export class Logger {
     static warn(arg0: string) {
