@@ -1,0 +1,39 @@
+name: Release Extension
+
+# 触发条件：当我推送到以 v 开头的标签（如 v1.1.4）时，启动这个任务
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      # 1. 下载你的代码
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # 2. 安装 Node.js 环境
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+          cache: 'npm'
+
+      # 3. 安装依赖
+      - name: Install dependencies
+        run: npm install
+
+      # 4. 打包 VSIX 文件 (使用 npx 调用 vsce)
+      - name: Package Extension
+        run: npx @vscode/vsce package
+
+      # 5. 创建 GitHub Release 并上传 .vsix 文件
+      - name: Create Release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: "*.vsix" # 上传所有后缀为 .vsix 的文件
+          generate_release_notes: true # 自动根据 commit 生成更新日志
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # 这里的变量 GitHub 会自动提供，无需手动设置
