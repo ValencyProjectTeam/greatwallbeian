@@ -1,7 +1,7 @@
 
 # Changelog
 
-## [1.1.5] - 2026-02-02
+## [1.1.6] - 2026-02-02
 
 ### Fixed
 - Fixed error message formatting consistency in logging

@@ -14,7 +14,7 @@ import { Logger } from './logger';
 
 // --- 类型定义 ---
 interface BeianEntry {
-	name: string;
+	name: string; 
 	date: string;
 	hash: string;
 }
